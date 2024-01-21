@@ -1,0 +1,51 @@
+<Content>:
+    ScrollView:
+        MDList:
+            OneLineListItem:
+                text:"Home"
+                on_release: 
+                    root.nav_drawer.set_state("close")
+                    root.manager.current = "Home"
+            OneLineListItem:
+                text:"Minecraft"
+                on_release: 
+                    root.nav_drawer.set_state("close")
+                    root.manager.current = "Minecraft"
+            OneLineListItem:
+                text:"Mods"
+                on_release: 
+                    root.nav_drawer.set_state("close")
+                    root.manager.current = "Mods"
+<Demo>:
+    Screen:
+        MDTopAppBar:
+            pos_hint: {'top':1 }
+            title:"RSACHIVER"
+            elevation: 5
+            left_action_items:[["menu", lambda x: nav_drawer.set_state("open")]]
+        MDNavigationDrawer:
+            id:nav_drawer
+            Content:
+                manager: screen_manager
+                nav_drawer: nav_drawer
+
+        
+        MDNavigationLayout:
+            ScreenManager:
+                id:screen_manager
+                Screen:
+                    name:"Home"
+                    MDLabel:
+                        text:"PLEASE SUBSCRIBE THIS CHANNEL"
+                        halign:"center"
+                Screen:
+                    name:"Minecraft"
+                    MDLabel:
+                        text:"HELLO boys"
+                        halign:"center"
+                Screen:
+                    name:"Mods"
+                    MDLabel:
+                        text:"HELLO braah"
+                        halign:"center"
+                                       
